@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:micro="clr-namespace:Microcharts.Maui;assembly=Microcharts.Maui"
+             x:Class="MonitoringProject.MainPage">
+
+    <ScrollView>
+        <StackLayout
+            Spacing="5"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Label
+                Text="Date de relevé - Température - Humidité"
+                FontSize="18"
+                HorizontalOptions="Start" />
+
+            <Label
+                x:Name="LabelData"
+                Text=""
+                FontSize="15"
+                HorizontalOptions="Start" />
+
+            <ListView x:Name="DataListView"
+                      VerticalOptions="FillAndExpand"
+                      HorizontalOptions="FillAndExpand"
+                      HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding Date}" Grid.Column="0" />
+                                <Label Text="{Binding Value1}" Grid.Column="1" />
+                                <Label Text="{Binding Value2}" Grid.Column="2" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button
+                x:Name="testBtn"
+                Text="Afficher les données"
+                Clicked="OnNewButtonClicked"
+                HorizontalOptions="Center" />
+
+
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
