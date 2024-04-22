@@ -23,3 +23,8 @@ L'objectif de cette application est de surveiller en temps réel les niveaux d'h
 - Accès à un réseau WiFi.
 - Un compte Google pour accéder à Google Sheets.
 - Installation de l'environnement de développement .NET MAUI pour la construction de l'application.
+
+## Collaborateurs
+
+- **Paul SUPIOT** - [@ARKENOP](https://github.com/ARKENOP)
+- **Terry Barrillon** - [@Many0nne](https://github.com/Many0nne)
