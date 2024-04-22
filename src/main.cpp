@@ -13,12 +13,12 @@ DHT_Unified dht(DHTPIN, DHTTYPE);
 
 uint32_t delayMS; 
 
-const char* ssid = "iPhone 13 Paul";
-const char* password = "haricot9";
-const char* url = "https://hook.eu2.make.com/ggtizg0u4y2el4bzaw9lc5wr68mf93e5";
+const char* ssid = "";
+const char* password = "";
+const char* url = "https://hook.eu2.make.com/";
 
 unsigned long previousMillis = 0; 
-const long interval = 30000; 
+const long interval = 300000;
 
 struct Data {
   float temperature;
@@ -79,10 +79,6 @@ void recordData(float temp, float humi) {
   if (dataIndex == 48) {
     dataIndex = 47;
   }
-  Serial.print("Index des données: ");
-  Serial.print(dataIndex);
-  Serial.print("Différence de l'index: ");
-  Serial.println(storedData[dataIndex].difference);
   Serial.print(F("Temperature: "));
   Serial.print(temp);
   Serial.println(F("°C"));
@@ -97,7 +93,7 @@ void sendData(){
     while (WiFi.status() != WL_CONNECTED && tries < 10) {
       Serial.println("Tentative de connexion au réseau WiFi...");
       WiFi.begin(ssid, password);
-      delay(1000);
+      delay(3000);
       tries++;
     }
   }
